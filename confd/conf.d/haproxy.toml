@@ -1,0 +1,8 @@
+[template]
+src	= "/etc/confd/templates/haproxy.tpl"
+dest = "/etc/confd/templates/haproxy.cfg"
+keys = [
+    "/projects"
+]
+reload_cmd 	= "haproxy -f /etc/confd/templates/haproxy.cfg -p /var/run/haproxy.pid -d -D -sf $(cat /var/run/haproxy.pid)"
+# reload_cmd = "/etc/init.d/haproxy reload"

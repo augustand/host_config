@@ -1,0 +1,9 @@
+[template]
+src	= "haproxy.tpl"
+dest = "/tmp/haproxy.cfg"
+keys = [
+    "/projects"
+]
+check_cmd = "haproxy -f /tmp/haproxy.cfg -p /tmp/haproxy.pid -d -D -sf $(cat /tmp/haproxy.pid)"
+#check_cmd = "haproxy -f /tmp/haproxy.cfg"
+#reload_cmd = "haproxy reload"
